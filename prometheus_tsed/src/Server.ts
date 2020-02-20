@@ -14,7 +14,11 @@ const rootDir = __dirname;
 
 @ServerSettings({
   rootDir,
-  acceptMimes: ["application/json"]
+  acceptMimes: ["application/json"],
+  // mount controller + routing
+  mount: {
+    "/metrics": `${rootDir}/controllers/MetricController.ts`
+  }
 })
 export class Server extends ServerLoader {
   /**
