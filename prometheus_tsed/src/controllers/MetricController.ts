@@ -1,11 +1,11 @@
-import { Controller, Get } from "@tsed/common";
+import { Controller, Get, Res } from "@tsed/common";
+import * as Express from "express";
 import * as Prometheus from "prom-client";
 
 @Controller("/metrics")
 export class MetricController {
   @Get()
-  public metrics(): string {
-    console.log("123");
-    return Prometheus.register.metrics();
+  public metrics(@Res() response: Express.Response): any {
+    response.end(Prometheus.register.metrics());
   }
 }

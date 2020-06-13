@@ -1,7 +1,7 @@
 import {
   GlobalAcceptMimesMiddleware,
   ServerLoader,
-  ServerSettings
+  ServerSettings,
 } from "@tsed/common";
 import * as bodyParser from "body-parser";
 import * as compress from "compression";
@@ -17,8 +17,9 @@ const rootDir = __dirname;
   acceptMimes: ["application/json"],
   // mount controller + routing
   mount: {
-    "/metrics": `${rootDir}/controllers/MetricController.ts`
-  }
+    "/metrics": `${rootDir}/controllers/MetricController.ts`,
+    "/users": `${rootDir}/controllers/UserController.ts`,
+  },
 })
 export class Server extends ServerLoader {
   /**
@@ -33,7 +34,7 @@ export class Server extends ServerLoader {
       .use(bodyParser.json())
       .use(
         bodyParser.urlencoded({
-          extended: true
+          extended: true,
         })
       );
     Prometheus.collectDefaultMetrics();

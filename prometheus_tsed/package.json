@@ -18,9 +18,9 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@tsed/common": "^5.43.0",
-    "@tsed/core": "^5.43.0",
-    "@tsed/di": "^5.43.0",
+    "@tsed/common": "5.31.3",
+    "@tsed/core": "5.31.3",
+    "@tsed/di": "5.31.3",
     "@types/prometheus-gc-stats": "^0.6.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
