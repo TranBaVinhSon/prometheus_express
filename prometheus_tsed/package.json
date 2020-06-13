@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "method-override": "^3.0.0",
     "prom-client": "^11.5.3",
-    "prometheus-gc-stats": "^0.6.2"
+    "prometheus-gc-stats": "^0.6.2",
+    "ts-log-debug": "^5.1.2"
   }
 }
