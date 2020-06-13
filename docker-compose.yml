@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  panda:
+    container_name: panda
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["npm", "run", "start"]
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/src

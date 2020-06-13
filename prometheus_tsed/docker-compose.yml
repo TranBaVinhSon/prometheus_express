@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  prometheus_tsed:
+    container_name: prometheus_tsed
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["npm", "run", "start"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/src
